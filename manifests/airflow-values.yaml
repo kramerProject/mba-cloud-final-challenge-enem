@@ -66,7 +66,7 @@ images:
   # to run and wait for DB migrations .
   useDefaultImageForMigration: false
   # timeout (in seconds) for airflow-migrations to complete
-  migrationsWaitTimeout: 600
+  migrationsWaitTimeout: 60000
   pod_template:
     repository: ~
     tag: ~
@@ -373,11 +373,11 @@ data:
 
 # Fernet key settings
 # Note: fernetKey can only be set during install, not upgrade
-fernetKey: gMaEvHVf-z4FxxWw4aGpShY5NG1VImseoWHma1ZrzEE=
+fernetKey: sXhuumEaGRgw6TUsLXhzmz1nrW-rQcy3jTAV-AZTQDw=
 fernetKeySecretName: ~
 
 # Flask secret key for Airflow Webserver: `[webserver] secret_key` in airflow.cfg
-webserverSecretKey: e737e1c0476b22027b7cc560c89d0742
+webserverSecretKey: f9ee45142894372757115e23006132b3
 webserverSecretKeySecretName: ~
 
 # In order to use kerberos you need to create secret containing the keytab file
@@ -460,7 +460,7 @@ workers:
   livenessProbe:
     enabled: true
     initialDelaySeconds: 10
-    timeoutSeconds: 600
+    timeoutSeconds: 60000
     failureThreshold: 5
     periodSeconds: 60
     command: ~
@@ -628,7 +628,7 @@ scheduler:
   # scheduler and let Kubernetes restart it
   livenessProbe:
     initialDelaySeconds: 10
-    timeoutSeconds: 600
+    timeoutSeconds: 60000
     failureThreshold: 5
     periodSeconds: 60
     command: ~
@@ -881,14 +881,14 @@ webserver:
   allowPodLogReading: true
   livenessProbe:
     initialDelaySeconds: 15
-    timeoutSeconds: 600
+    timeoutSeconds: 60000
     failureThreshold: 20
     periodSeconds: 5
     scheme: HTTP
 
   readinessProbe:
     initialDelaySeconds: 15
-    timeoutSeconds: 600
+    timeoutSeconds: 60000
     failureThreshold: 20
     periodSeconds: 5
     scheme: HTTP
@@ -1054,7 +1054,7 @@ triggerer:
   # triggerer and let Kubernetes restart it
   livenessProbe:
     initialDelaySeconds: 10
-    timeoutSeconds: 600
+    timeoutSeconds: 60000
     failureThreshold: 5
     periodSeconds: 60
     command: ~
@@ -1152,7 +1152,7 @@ dagProcessor:
   # dag processor and let Kubernetes restart it
   livenessProbe:
     initialDelaySeconds: 10
-    timeoutSeconds: 600
+    timeoutSeconds: 60000
     failureThreshold: 5
     periodSeconds: 60
     command: ~
@@ -1714,7 +1714,7 @@ config:
     log_id_template: "{dag_id}_{task_id}_{execution_date}_{try_number}"
   elasticsearch_configs:
     max_retries: 3
-    timeout: 600
+    timeout: 60000
     retry_timeout: 'True'
   kerberos:
     keytab: '{{ .Values.kerberos.keytabPath }}'
