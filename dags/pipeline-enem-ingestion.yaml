@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: python-container
-    image: kramerscs/enem:1.0.0
+    image: kramerscs/enem:2.0.0
     imagePullPolicy: Always
     securityContext:
       allowPrivilegeEscalation: false

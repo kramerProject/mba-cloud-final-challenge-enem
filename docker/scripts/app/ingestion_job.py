@@ -32,8 +32,8 @@ def s3_upload(bucket_name, source_file_path, destination_file):
 
 if __name__ == "__main__":
     print("Starting Job")
-    print(f"DOWNLOADING FILES....")
-    downloader(DOWNLOAD_URL)
+    print(f"DOWNLOADING FILES....222")
+    # downloader(DOWNLOAD_URL)
     print("Sending to S3")
     print("UPLOADING-----> to s3")
     src_path = "./enem2020/DADOS/MICRODADOS_ENEM_2020.csv"
