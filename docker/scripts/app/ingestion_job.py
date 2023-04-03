@@ -21,7 +21,7 @@ def downloader(url):
         myzip.extractall(ENEM_FOLDER)
         return True
     except Exception as err:
-        print("Err downloading", err)
+        print("Error downloading", err)
         return False
 
 def s3_upload(bucket_name, source_file_path, destination_file):
@@ -33,11 +33,11 @@ def s3_upload(bucket_name, source_file_path, destination_file):
 
 if __name__ == "__main__":
     print("Starting Job")
-    print(f"DOWNLOADING FILES....3.0.0")
-    downloader(DOWNLOAD_URL)
+    print("DOWNLOADING FILES....4.0.0")
+    print(downloader(DOWNLOAD_URL))
     print("Sending to S3")
     print("UPLOADING-----> to s3")
     src_path = "./enem2020/DADOS/MICRODADOS_ENEM_2020.csv"
-    s3_upload(LANDING_BUCKET, src_path, f"enem2020/enem_2020.csv")
+    s3_upload(LANDING_BUCKET, src_path, "enem2020/enem_2020.csv")
 
     print("Done!")
