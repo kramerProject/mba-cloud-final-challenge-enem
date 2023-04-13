@@ -12,10 +12,10 @@ spec:
       runAsUser: 0
     resources:
       requests:
-        memory: "1Gi"
+        memory: "3Gi"
         cpu: "500m"
       limits:
-        memory: "1Gi"
+        memory: "3Gi"
         cpu: "1000m"
     command: ["bash", "-c", "python3 -u /src/app/ingestion_job.py"]
     envFrom:
