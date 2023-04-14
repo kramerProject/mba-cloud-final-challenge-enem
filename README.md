@@ -1,8 +1,7 @@
 ## Description
 
 This a practical activity part of the MBA in Data Engineering from XPE. The job consists in ingesting the
-[ENEM_2020](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-
-abertos/microdados/enem) microdata in a structure of Data Lake on AWS. After that, use the Spark Operator to, within Kubernetes, convert the data to the parquet format and write the results in another layer of the Data Lake. Finally make the data available for querying in AWS Athena.
+[ENEM_2020](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem) microdata in a structure of Data Lake on AWS. After that, use the Spark Operator to, within Kubernetes, convert the data to the parquet format and write the results in another layer of the Data Lake. Finally make the data available for querying in AWS Athena.
 
 ## About the source
 
